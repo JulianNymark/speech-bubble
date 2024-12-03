@@ -1,0 +1,31 @@
+.speech-bubble {
+  --ax-bg-raised: #fff;
+  --__axc-guide-panel-arrow-width: 20px;
+  --ax-spacing-2: 8px;
+  --ax-border-info: #5a8fae;
+
+  --__border-image-offset: 20px;
+
+  position: relative;
+
+  border-image: url("/square_speech_no_margin.svg");
+  border-image-width: 20px;
+  border-image-slice: 20 20 20 20;
+  border-image-outset: var(--__border-image-offset);
+  background: var(--ax-bg-raised);
+
+  .speech-bubble__tail {
+    position: absolute;
+    top: calc(-24px - var(--__border-image-offset));
+
+    left: calc(
+      50% + (-1 * var(--__axc-guide-panel-arrow-width)) + var(--ax-spacing-2)
+    );
+    transform: rotate(90deg) rotateX(180deg) translateX(0.5px);
+    color: var(--ax-bg-raised);
+
+    .strokePath {
+      color: var(--ax-border-info);
+    }
+  }
+}
