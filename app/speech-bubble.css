@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #f44;
+}
+
+.main-bg {
+  background: var(--bg-color);
+}
+
 .speech-bubble {
   --ax-bg-raised: #fff;
   --__axc-guide-panel-arrow-width: 20px;
@@ -15,17 +23,36 @@
   background: var(--ax-bg-raised);
 
   .speech-bubble__tail {
-    position: absolute;
-    top: calc(-24px - var(--__border-image-offset));
+    & > svg {
+      position: absolute;
+      top: calc(-24px - var(--__border-image-offset));
 
-    left: calc(
-      50% + (-1 * var(--__axc-guide-panel-arrow-width)) + var(--ax-spacing-2)
-    );
-    transform: rotate(90deg) rotateX(180deg) translateX(0.5px);
-    color: var(--ax-bg-raised);
+      left: calc(
+        50% + (-1 * var(--__axc-guide-panel-arrow-width)) + var(--ax-spacing-2)
+      );
+      transform: rotate(90deg) rotateX(180deg) translateX(0.5px);
+      color: var(--ax-bg-raised);
 
-    .strokePath {
-      color: var(--ax-border-info);
+      .strokePath {
+        color: var(--ax-border-info);
+      }
     }
+  }
+
+  &::after {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    content: "";
+    display: block;
+    background: var(--ax-bg-raised);
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: 1;
+  }
+
+  .speech-bubble__content {
+    position: relative;
+    z-index: 2;
   }
 }

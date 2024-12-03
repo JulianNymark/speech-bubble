@@ -13,7 +13,6 @@ export const SpeechBubbleTail: DefaultSpeechBubbleTailType = ({ ...props }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
-      className="speech-bubble__tail"
       {...props}
     >
       <path d="M22 0H19L20 33H22V0Z" fill="currentColor" />
